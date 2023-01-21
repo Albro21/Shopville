@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block title %}Catalog{% endblock %}
+
+{% block slidebar %}
+<div class="sidebar">
+    <a href="" id="add_product_btn"><b>+ Add your Product</b></a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+{% if items %}
+{% for item in items %}
+<a href="/{{ item.item_name }}" class="item">
+    <img src="{% get_static_prefix %}{{ item.item_image|cut:"main/static/" }}" class="item_image">
+    <div class="item_prop">
+        <h1 class="item_name">{{ item.item_name }}</h1>
+        <textarea rows="5" readonly class="item_description">{{ item.item_description }}</textarea>
+    </div>
+    <div class="price">
+        {{ item.price }}$
+    </div>
+</a>
+{% endfor %}
+{% else %}
+<h1 align="center">No items</h1>
+{% endif %}
+</div>
+{% endblock %}
