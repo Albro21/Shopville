@@ -6,7 +6,7 @@
 
 {% block slidebar %}
 <div class="sidebar">
-    <a href="" id="add_product_btn"><b>+ Add your Product</b></a>
+    <a href="add_product" id="add_product_btn"><b>+ Add your Product</b></a>
 </div>
 {% endblock %}
 
@@ -14,8 +14,8 @@
 <div class="content">
 {% if items %}
 {% for item in items %}
-<a href="/{{ item.item_name }}" class="item">
-    <img src="{% get_static_prefix %}{{ item.item_image|cut:"main/static/" }}" class="item_image">
+<a href="product/{{ item.item_name }}" class="item">
+    <img src="/media/{{ item.item_image }}" class="item_image">
     <div class="item_prop">
         <h1 class="item_name">{{ item.item_name }}</h1>
         <textarea rows="5" readonly class="item_description">{{ item.item_description }}</textarea>

@@ -1,6 +1,18 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
-{% block title %}{{item.item_name}}{% endblock %}
+{% block title %}Add product{% endblock %}
 
-{% block content %}{% endblock %}
+{% block content %}
+<div class="add_product_content">
+    <div class="form">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <input type="submit" vаluе="Добавить">
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

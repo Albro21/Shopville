@@ -6,7 +6,7 @@ from django.db import models
 class Goods(models.Model):
     item_name = models.CharField(max_length=50, default='No product name')
     item_description = models.TextField(max_length=1000, default='No product description')
-    item_image = models.ImageField(upload_to='main/static/main/images')
+    item_image = models.ImageField(upload_to='images')
     price = models.DecimalField(max_digits=5, decimal_places=2)
     sellers_email = models.EmailField()
 

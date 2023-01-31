@@ -5,7 +5,7 @@
 
 {% block content %}
 <div class="item_content">
-    <img id="item_image" src="{% get_static_prefix %}{{ item.item_image|cut:"main/static/" }}">
+    <img id="item_image" src="/media/{{ item.item_image }}">
     <div id="item_prop">
         <h1 id="item_name">{{ item.item_name }}</h1>
         <h1 id="price">{{ item.price }}$</h1>
