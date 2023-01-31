@@ -8,10 +8,6 @@ def catalog(request):
     content = {
         'items': Goods.objects.order_by('id')[:]
     }
-    print('--------------------------------------------------------------------------------')
-    for item in Goods.objects.order_by('id')[:]:
-        print(item.item_image)
-        print('___')
     return render(request, 'main/catalog.html', content)
 
 
