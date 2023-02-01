@@ -12,10 +12,12 @@
 </head>
 <body>
 <div class="header">
-    <a href="/"><img src="{% static 'main/images/img.png' %}" id="logo-img"></a>
-    <a href="/" id="logo-name">Shopville</a>
+    <a href="{% url 'catalog' %}" id="logo">
+        <img src="{% static 'main/images/img.png' %}">
+        <span>Shopville</span>
+    </a>
     <ul class="nav-links">
-        <li><a href="">Home</a></li>
+        <li><a href="{% url 'catalog' %}">Catalog</a></li>
         <li><a href="">About</a></li>
         <li><a href="">Login</a></li>
     </ul>

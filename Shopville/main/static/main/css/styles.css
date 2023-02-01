@@ -18,21 +18,20 @@
     background-color: white;
 }
 
-#logo-img {
-    height: 70px;
-    margin: auto;
-    margin-right: 0;
-    margin-left: 20px;
-}
-
-#logo-name {
+#logo {
     text-decoration: none;
     color: black;
     font-size: 50px;
-    display: inline-block;
+    margin: auto 0 auto 20px;
+    display: flex;
+}
+
+#logo img {
+    height: 70px;
+}
+
+#logo span {
     margin: auto;
-    margin-left: 0;
-    flex-grow: 2;
 }
 
 .nav-links {
@@ -40,7 +39,6 @@
     align-items: center;
     margin: auto;
     margin-right: 20px;
-
 }
 
 .nav-links li {
