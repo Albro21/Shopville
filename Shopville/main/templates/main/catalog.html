@@ -1,12 +1,10 @@
 {% extends 'main/base.html' %}
-{% load static %}
-
 
 {% block title %}Catalog{% endblock %}
 
 {% block slidebar %}
 <div class="sidebar">
-    <a href="add_product" id="add_product_btn"><b>+ Add your Product</b></a>
+    <a href="{% url 'add_product' %}" id="add_product_btn"><b>+ Add your Product</b></a>
 </div>
 {% endblock %}
 
@@ -14,7 +12,7 @@
 <div class="content">
 {% if items %}
 {% for item in items %}
-<a href="product/{{ item.item_name }}" class="item">
+<a href="{% url 'item' item.item_name %}" class="item">
     <img src="/media/{{ item.item_image }}" class="item_image">
     <div class="item_prop">
         <h1 class="item_name">{{ item.item_name }}</h1>
