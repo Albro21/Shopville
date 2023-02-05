@@ -4,14 +4,45 @@
 
 {% block content %}
 <div class="add_product_content">
-    <div class="form">
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p}}
-            <input type="submit" vаluе="Добавить">
-        </form>
-    </div>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="img_price">
+            <div class="input">
+                {{ f.item_image.label_tag }}
+                <label class="custom-file-upload">{{ f.item_image }}</label>
+                
+                <div>
+                    {% if f.item_image.errors %}
+                        {% for error in f.item_image.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <div id="price_input">
+                {{ f.price.label_tag }}
+                {{ f.price }}$
+                {{ f.price.help_text }}
+                {{ f.price.errors }}
+            </div>
+        </div>
+        <div class="marg_div">
+            <div>
+                {{ f.item_name }}
+                {{ f.item_name.help_text }}
+                {{ f.item_name.errors }}
+            </div>
+            <div class="description">
+                {{ f.item_description.label_tag }}
+                {{ f.item_description }}
+                {{ f.item_description.help_text }}
+                {{ f.item_description.errors }}
+            </div>    
+        </div>
+        <div id="back">
+            <a href="{% url 'catalog' %}" class="add_product_b" id="back_btn"> Back </a>
+            <input type="submit" value="+ Add product" class="add_product_b" id="add_btn">
+        </div>
+    </form>   
 </div>
-
-
 {% endblock %}
