@@ -26,4 +26,4 @@ def add_product(request):
             return redirect('/')
     else:
         form = GoodsForm()
-    return render(request, 'main/add_product.html', {'form': form})
+    return render(request, 'main/add_product.html', {'f': form})
